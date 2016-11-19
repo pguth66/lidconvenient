@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>A Lidconvenient Truth</title>
+<link rel="stylesheet" href="css/w3.css">
+<link rel="stylesheet" href="css/w3-theme-black.css">
+<link rel="stylesheet" href="css/font-awesome.min.css">
+</head>
+<body>
+
+<header class="w3-container w3-theme w3-padding" id="myHeader">
+<div class="w3-center">
+<h1 class="w3-xxxlarge">A Lidconvenient Truth</h1>
+</div>
+</header>
+
+<div class="w3-padding w3-white w3-center">
+<p>
+One of the burning questions of our time is, "Should I put the lid down when I'm done?"
+</p>
+</div>
+
+<div class="w3-row w3-border">
+<div class="w3-container w3-third w3-center" id="col1">
+<div class="w3-panel">Strategy: Lid Up, Seat Down</div>
+In this strategy, the person using the toilet always puts the seat down when they're done but leaves the lid up.
+<button type="button" class="w3button w3-center" onClick="runLUSD()">Run LUSD</button>
+<table class="w3-table">
+<tr>
+	<td># of runs</td>
+	<td id="col1runs">0</td>
+</tr>
+<tr>
+	<td># of inconvenicnes</td>
+	<td id="col1inconv">0</td>
+</tr>
+<tr>
+	<td>inconvenience %</td>
+	<td id="col1inconvpercent">0</td>
+</tr>
+</table>
+
+</div>
+
+<div class="w3-container w3-third" id="col2">
+<div class="w3-panel">Strategy: Let It Ride</div>
+In this strategy, the person using the toilet leaves the lid as it was when they finished - if it was up, it stays up, if it was down, it stays down.
+<button type="button" class="w3button w3-center" onClick="runLIR()">Run LIR</button>
+<table class="w3-table">
+<tr>
+	<td># of runs</td>
+	<td id="col2runs">0</td>
+</tr>
+<tr>
+	<td># of inconvenicnes</td>
+	<td id="col2inconv">0</td>
+</tr>
+<tr>
+	<td>inconvenience %</td>
+	<td id="col2inconvpercent">0</td>
+</tr>
+</table>
+
+</div>
+
+<div class="w3-container w3-third" id="col2">
+<div class="w3-panel">Strategy: Put It Up</div>
+In this strategy, the person using the toilet always puts the seat up when they're done.
+<button type="button" class="w3button w3-center" onClick="runLU()">Run LU</button>
+<table class="w3-table">
+<tr>
+	<td># of runs</td>
+	<td id="col3runs">0</td>
+</tr>
+<tr>
+	<td># of inconvenicnes</td>
+	<td id="col3inconv">0</td>
+</tr>
+<tr>
+	<td>inconvenience %</td>
+	<td id="col3inconvpercent">0</td>
+</tr>
+</table>
+
+</div>
+</div>
+
+
+<!-- this is where the message about owing no tax will show up -->
+</div>
+<p id="demo"> </p>
+</div>
+
+<!-- this is where the table showing the tax will appear -->
+<div id="tableholder" class="w3-responsive w3-card-4">
+</div>
+
+<!-- for showing the notes only after someone types in their number -->
+<style>
+div.starthidden {
+	display: none
+}
+</style>
+
+<!-- notes go here in the footer -->
+<div id="footer" class="w3-container w3-footer starthidden">
+<p>
+
+</p>
+</div>
+
+<!-- functions to format money -->
+
+<!-- functions to draw and populate the table of results -->
+<!-- functions to calculate the tax etc -->
+<script src="js/lidconvenient.js">
+</script>
+</html>
+
