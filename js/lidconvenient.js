@@ -1,5 +1,8 @@
 var numMales = 2 ;
 var numFemales = 2 ;
+var cumPIU = 0 ;
+var cumPID = 0 ;
+var cumLIR = 0 ;
 
 function runAll() {
 
@@ -10,10 +13,25 @@ function runAll() {
 		if ((numMales < 0 ) || ( numFemales < 0 )) throw "Cannot have negative people" ;
 		if ( numMales + numFemales == 0 ) throw "Have to have at least one person";
 		if (numMales + numFemales > 10000 ) throw "Too many people";
+		
+		// clear any highlighting left over from previous run
+		document.getElementById("col1inconvpercent").classList.remove("w3-green");
+		document.getElementById("col2inconvpercent").classList.remove("w3-green");
+		document.getElementById("col3inconvpercent").classList.remove("w3-green");
 
 		runSim("PIU");
 		runSim("PID");
 		runSim("LIR");
+
+		if (( cumPIU < cumPID) && (cumPIU < cumLIR))  {
+			document.getElementById("col3inconvpercent").classList.add("w3-green");
+		}
+		else if (( cumPID < cumPIU) && (cumPID < cumLIR )) {
+			document.getElementById("col1inconvpercent").classList.add("w3-green");
+		}
+		else {
+			document.getElementById("col2inconvpercent").classList.add("w3-green");
+		}
 	}
 	catch(err) {
 		console.log(err);
@@ -93,6 +111,16 @@ function runSim(strategy) {
 				document.getElementById("col2inconvpercent").innerHTML = ((numInconv / i).toFixed(2) * 100) + "%" ;
 				break ; // leave the seat as it was
 		}
+	}
+	switch(strategy) {
+		case "PIU":
+			cumPIU = numInconv ;
+			break;
+		case "PID":
+			cumPID = numInconv ;
+			break;
+		case "LIR":
+			cumLIR = numInconv;
 	}
 }
 
