@@ -5,9 +5,19 @@ function runAll() {
 
 	numMales = Number(document.getElementById("malesinput").value);
 	numFemales = Number(document.getElementById("femalesinput").value);
-	runSim("PIU");
-	runSim("PID");
-	runSim("LIR");
+	try {
+		if((isNaN(numMales)) || (isNaN(numFemales))) throw "Please enter numbers only" ;
+		if ((numMales < 0 ) || ( numFemales < 0 )) throw "Cannot have negative people" ;
+		if ( numMales + numFemales == 0 ) throw "Have to have at least one person";
+		if (numMales + numFemales > 10000 ) throw "Too many people";
+
+		runSim("PIU");
+		runSim("PID");
+		runSim("LIR");
+	}
+	catch(err) {
+		console.log(err);
+	}
 }
 	
 function runSim(strategy) {
@@ -20,6 +30,7 @@ function runSim(strategy) {
 	const numberTwoPercent = 0.2 ;
 	var isNumberTwo = false ;
 	var sexRatio = numFemales / ( numMales + numFemales ) ;
+
 
 	for ( i = 1 ; i <= runs ; i++ ) {
 		// assume 50% chance it's a man or a woman
