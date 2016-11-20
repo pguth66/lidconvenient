@@ -16,9 +16,9 @@
 
 <div class="w3-padding w3-white w3-center">
 <p>
-One of the burning questions of our time is, "Should I put the lid down when
+One of the burning questions of our time is, "Should I put the seat down when
 I'm done?" This page lets you run simulations to answer this question.
-There are three strategies, explained below. When you click the button,
+There are three strategies, explained below. When you click the button for each strategy,
 the simulator will run 1000 tests and then show you how many times someone
 was inconvenienced - which means how often someone had to either put up or
 put down the seat before using the toilet.
@@ -34,17 +34,17 @@ the number of males and females you'd like to use for the simulation below.
 
 <div class="w3-row w3-border">
 <div class="w3-container w3-third w3-center" id="col1">
-<div class="w3-panel">Strategy: Lid Up, Seat Down</div>
-In this strategy, the person using the toilet always puts the seat down when they're done but leaves the lid up.
+<div class="w3-panel">Strategy: Put It Down</div>
+In this strategy, the person using the toilet always puts the seat down when they're done.
 <br>
-<button type="button" class="w3button" onClick="runLUSD()">Run LUSD</button>
+<button type="button" class="w3button" onClick="runLUSD()">Run PID</button>
 <table class="w3-table">
 <tr>
-	<td># of runs</td>
+	<td>Runs</td>
 	<td id="col1runs">0</td>
 </tr>
 <tr>
-	<td># of inconveniences</td>
+	<td>Inconveniences</td>
 	<td id="col1inconv">0</td>
 </tr>
 <tr>
@@ -57,16 +57,16 @@ In this strategy, the person using the toilet always puts the seat down when the
 
 <div class="w3-container w3-third w3-center" id="col2">
 <div class="w3-panel">Strategy: Let It Ride</div>
-In this strategy, the person using the toilet leaves the lid as it was when they finished - if it was up, it stays up, if it was down, it stays down.
+In this strategy, the person using the toilet leaves the seat as it was when they finished - if it was up, it stays up, if it was down, it stays down.
 <br>
 <button type="button" class="w3button" onClick="runLIR()">Run LIR</button>
 <table class="w3-table">
 <tr>
-	<td># of runs</td>
+	<td>Runs</td>
 	<td id="col2runs">0</td>
 </tr>
 <tr>
-	<td># of inconveniences</td>
+	<td>Inconveniences</td>
 	<td id="col2inconv">0</td>
 </tr>
 <tr>
@@ -81,14 +81,14 @@ In this strategy, the person using the toilet leaves the lid as it was when they
 <div class="w3-panel">Strategy: Put It Up</div>
 In this strategy, the person using the toilet always puts the seat up when they're done.
 <br>
-<button type="button" class="w3button" onClick="runLU()">Run LU</button>
+<button type="button" class="w3button" onClick="runLU()">Run PIU</button>
 <table class="w3-table">
 <tr>
-	<td># of runs</td>
+	<td>Runs</td>
 	<td id="col3runs">0</td>
 </tr>
 <tr>
-	<td># of inconveniences</td>
+	<td>Inconveniences</td>
 	<td id="col3inconv">0</td>
 </tr>
 <tr>
