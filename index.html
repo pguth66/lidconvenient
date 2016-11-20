@@ -29,7 +29,7 @@ the number of males and females you'd like to use for the simulation below.
 </p>
 <label>Number of males:</label> <input type="number" min="0" max="10000" class="w3-center" id="malesinput" value="2"><br>
 <label>Number of females:</label> <input type="number" min="0" max="10000" class="w3-center" id="femalesinput" value="2"><br>
-<input type="button" onclick="setSexes()" value="Set">
+<input type="button" onclick="runAll()" value="Run Simulations">
 </div>
 
 <div class="w3-row w3-border">
@@ -37,7 +37,6 @@ the number of males and females you'd like to use for the simulation below.
 <div class="w3-panel">Strategy: Put It Down</div>
 In this strategy, the person using the toilet always puts the seat down when they're done.
 <br>
-<button type="button" class="w3button" onClick="runSim('PID')">Run PID simulation</button>
 <table class="w3-table">
 <tr>
 	<td>Runs</td>
@@ -59,7 +58,6 @@ In this strategy, the person using the toilet always puts the seat down when the
 <div class="w3-panel">Strategy: Let It Ride</div>
 In this strategy, the person using the toilet leaves the seat as it was when they finished - if it was up, it stays up, if it was down, it stays down.
 <br>
-<button type="button" class="w3button" onClick="runSim('LIR')">Run LIR simulation</button>
 <table class="w3-table">
 <tr>
 	<td>Runs</td>
@@ -81,7 +79,6 @@ In this strategy, the person using the toilet leaves the seat as it was when the
 <div class="w3-panel">Strategy: Put It Up</div>
 In this strategy, the person using the toilet always puts the seat up when they're done.
 <br>
-<button type="button" class="w3button" onClick="runSim('PIU')">Run PIU simulation</button>
 <table class="w3-table">
 <tr>
 	<td>Runs</td>

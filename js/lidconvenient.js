@@ -1,10 +1,13 @@
 var numMales = 2 ;
 var numFemales = 2 ;
 
-function setSexes() {
+function runAll() {
 
 	numMales = Number(document.getElementById("malesinput").value);
 	numFemales = Number(document.getElementById("femalesinput").value);
+	runSim("PIU");
+	runSim("PID");
+	runSim("LIR");
 }
 	
 function runSim(strategy) {
