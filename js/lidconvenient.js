@@ -1,3 +1,12 @@
+var numMales = 2 ;
+var numFemales = 2 ;
+
+function setSexes() {
+
+	numMales = Number(document.getElementById("malesinput").value);
+	numFemales = Number(document.getElementById("femalesinput").value);
+}
+	
 function runLU ( ) {
 
 	var runs = 1000 ;
@@ -8,10 +17,11 @@ function runLU ( ) {
 	const numberTwoPercent = 0.2 ;
 	var isNumberTwo = false ;
 	var ranNum = 0 ;
+	var sexRatio = numFemales / ( numMales + numFemales ) ;
 
 	for ( i = 1 ; i < runs ; i++ ) {
 		// assume 50% chance it's a man or a woman
-		if ( Math.random() > 0.6 ) {
+		if ( Math.random() > sexRatio ) {
 			isMan = true ;
 		}
 		else {
@@ -27,7 +37,6 @@ function runLU ( ) {
 
 		if ( lastState == 0 ) {
 			numInconv++ ;
-			console.log("Lid was down");
 		}
 		else if ( ( lastState == 1 ) && isMan && !isNumberTwo ) {
 			numInconv++ ;
@@ -35,7 +44,6 @@ function runLU ( ) {
 		}
 		else if ( ( lastState == 2  ) && (!isMan) ) {
 			numInconv++ ;
-			console.log("seat was up and it's not a man");
 			lastState = 1 ;
 		}
 		else if ( ( lastState == 2 ) && isMan && isNumberTwo ) {
