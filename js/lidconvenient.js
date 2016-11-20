@@ -68,18 +68,18 @@ function runSim(strategy) {
 				lastState = 2 ; //always put the seat up
 				document.getElementById("col3runs").innerHTML =  i;
 				document.getElementById("col3inconv").innerHTML = numInconv ;
-				document.getElementById("col3inconvpercent").innerHTML = (numInconv / i).toFixed(2) * 100 ;
+				document.getElementById("col3inconvpercent").innerHTML = ((numInconv / i).toFixed(2) * 100 ) + "%" ;
 				break ;
 			case "PID":
 				lastState = 1 ; //always put the seat down
 				document.getElementById("col1runs").innerHTML =  i;
 				document.getElementById("col1inconv").innerHTML = numInconv ;
-				document.getElementById("col1inconvpercent").innerHTML = (numInconv / i).toFixed(2) * 100 ;
+				document.getElementById("col1inconvpercent").innerHTML = ((numInconv / i).toFixed(2) * 100 ) + "%";
 				break ;
 			case "LIR":
 				document.getElementById("col2runs").innerHTML =  i;
 				document.getElementById("col2inconv").innerHTML = numInconv ;
-				document.getElementById("col2inconvpercent").innerHTML = (numInconv / i).toFixed(2) * 100 ;
+				document.getElementById("col2inconvpercent").innerHTML = ((numInconv / i).toFixed(2) * 100) + "%" ;
 				break ; // leave the seat as it was
 		}
 	}
