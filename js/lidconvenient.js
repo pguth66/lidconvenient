@@ -51,7 +51,7 @@ function runSim(strategy) {
 	var isMan = false ;
 	var currentRun = 0 ;
 	var numInconv = 0 ;
-	const numberTwoPercent = 0.2 ; // assume you poo 1 in 5 times
+	const numberTwoPercent = 0.143 ; // assume you poo 1 in 7 times
 	var isNumberTwo = false ;
 	var sexRatio = numFemales / ( numMales + numFemales ) ; // from the user input
 
