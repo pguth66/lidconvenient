@@ -1,3 +1,4 @@
+// these need to be global to go between runAll and runSim
 var numMales = 2 ;
 var numFemales = 2 ;
 var cumPIU = 0 ;
@@ -6,6 +7,7 @@ var cumLIR = 0 ;
 
 function runAll() {
 
+	// get the input, validate it, and run the 3 simulators
 	numMales = Number(document.getElementById("malesinput").value);
 	numFemales = Number(document.getElementById("femalesinput").value);
 	try {
@@ -23,6 +25,7 @@ function runAll() {
 		runSim("PID");
 		runSim("LIR");
 
+		// now that we've done the sims, highlight the lowest one
 		if (( cumPIU < cumPID) && (cumPIU < cumLIR))  {
 			document.getElementById("col3inconvpercent").classList.add("w3-green");
 		}
@@ -32,6 +35,7 @@ function runAll() {
 		else {
 			document.getElementById("col2inconvpercent").classList.add("w3-green");
 		}
+		// unhide the note about highlighting the optimal strategy
 		document.getElementById("footer").style.display="block";
 	}
 	catch(err) {
@@ -39,6 +43,7 @@ function runAll() {
 	}
 }
 	
+// runs the sims - which strategy to use is passed as an arg
 function runSim(strategy) {
 
 	var runs = 1000 ;
@@ -46,13 +51,12 @@ function runSim(strategy) {
 	var isMan = false ;
 	var currentRun = 0 ;
 	var numInconv = 0 ;
-	const numberTwoPercent = 0.2 ;
+	const numberTwoPercent = 0.2 ; // assume you poo 1 in 5 times
 	var isNumberTwo = false ;
-	var sexRatio = numFemales / ( numMales + numFemales ) ;
+	var sexRatio = numFemales / ( numMales + numFemales ) ; // from the user input
 
-
+	// loop through all the runs
 	for ( i = 1 ; i <= runs ; i++ ) {
-		// assume 50% chance it's a man or a woman
 		if ( Math.random() > sexRatio ) {
 			isMan = true ;
 		}
@@ -112,7 +116,9 @@ function runSim(strategy) {
 				document.getElementById("col2inconvpercent").innerHTML = ((numInconv / i).toFixed(2) * 100) + "%" ;
 				break ; // leave the seat as it was
 		}
-	}
+	} // end of for loop
+
+	// after loop, save the inconvenience value for this strategy to find the minimum after all 3 run
 	switch(strategy) {
 		case "PIU":
 			cumPIU = numInconv ;
