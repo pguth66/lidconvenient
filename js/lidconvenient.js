@@ -32,6 +32,7 @@ function runAll() {
 		else {
 			document.getElementById("col2inconvpercent").classList.add("w3-green");
 		}
+		document.getElementById("footer").style.display="block";
 	}
 	catch(err) {
 		console.log(err);
