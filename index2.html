@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>A Lidconvenient Truth</title>
+<link rel="stylesheet" href="css/w3.css">
+<link rel="stylesheet" href="css/w3-theme-black.css">
+<link rel="stylesheet" href="css/font-awesome.min.css">
+</head>
+<body>
+
+<header class="w3-container w3-theme w3-padding" id="myHeader">
+<div class="w3-center">
+<h1 class="w3-xxxlarge">A Lidconvenient Truth</h1>
+</div>
+</header>
+
+<div class="w3-padding w3-white w3-center">
+<p>
+One of the burning questions of our time is, "Should I put the seat down when
+I'm done?" This page lets you run simulations to answer this question.
+There are three strategies, explained below. When you click the button,
+the simulator will run 1000 tests for each strategy and show you how many times someone
+was inconvenienced - meaning how often someone had to either put up or
+put down the seat before using the toilet.
+</p>
+<p><strong>UPDATE:</strong> The original version of this simulator only treated it as an inconvenience if
+someone had to move the seat prior to using it. But one could say that it's an
+inconvenience if you have to move the seat <em>after</em> using the toilet as well.
+This version of the simulator takes that into account, and gives very different results!
+</p>
+<p>
+Since the mix of males and females involved can change the results, please enter
+the number of males and females you'd like to use for the simulation below.
+</p>
+<label>Number of males:</label> <input type="number" min="0" max="10000" class="w3-center" id="malesinput" value="2"><br>
+<label>Number of females:</label> <input type="number" min="0" max="10000" class="w3-center" id="femalesinput" value="2"><br>
+<input type="button" class="w3-btn" onclick="runAll()" value="Run Simulations">
+</div>
+
+<div class="w3-row w3-border">
+<div class="w3-container w3-third w3-center" id="col1">
+<div class="w3-panel">Strategy: Put It Down</div>
+In this strategy, the person using the toilet always puts the seat down when they're done.
+<br>
+</div>
+<div class="w3-container w3-third w3-center" id="col2">
+<div class="w3-panel">Strategy: Let It Ride</div>
+In this strategy, the person using the toilet leaves the seat as it was when they finished - if it was up, it stays up, if it was down, it stays down.
+<br>
+</div>
+<div class="w3-container w3-third w3-center" id="col2">
+<div class="w3-panel">Strategy: Put It Up</div>
+In this strategy, the person using the toilet always puts the seat up when they're done.
+<br>
+</div>
+</div> 
+
+<div class="w3-row w3-border">
+<div class="w3-container w3-third w3-border w3-center" id="table1">
+<table class="w3-table">
+<tr>
+	<td>Runs</td>
+	<td id="col1runs">0</td>
+</tr>
+<tr>
+	<td>Inconveniences</td>
+	<td id="col1inconv">0</td>
+</tr>
+<tr>
+	<td>inconvenience %</td>
+	<td id="col1inconvpercent">0</td>
+</tr>
+</table>
+
+</div>
+
+<div class="w3-container w3-third w3-border w3-center" id="table2">
+<table class="w3-table">
+<tr>
+	<td>Runs</td>
+	<td id="col2runs">0</td>
+</tr>
+<tr>
+	<td>Inconveniences</td>
+	<td id="col2inconv">0</td>
+</tr>
+<tr>
+	<td>inconvenience %</td>
+	<td id="col2inconvpercent">0</td>
+</tr>
+</table>
+
+</div>
+
+<div class="w3-container w3-third w3-border w3-center" id="table3">
+<table class="w3-table">
+<tr>
+	<td>Runs</td>
+	<td id="col3runs">0</td>
+</tr>
+<tr>
+	<td>Inconveniences</td>
+	<td id="col3inconv">0</td>
+</tr>
+<tr>
+	<td>inconvenience %</td>
+	<td id="col3inconvpercent">0</td>
+</tr>
+</table>
+</div>
+
+</div>
+</div>
+
+<!-- this is where the table showing the tax will appear -->
+<div id="tableholder" class="w3-responsive w3-card-4">
+</div>
+
+<!-- for showing the notes only after someone types in their number -->
+<style>
+div.starthidden {
+	display: none
+}
+</style>
+
+<!-- notes go here in the footer -->
+<div id="footer" class="w3-container w3-footer starthidden">
+<p>
+The <span class="w3-green">green</span> highlights the strategy that leads to the least inconvenience.
+</p>
+</div>
+
+<!-- functions to format money -->
+
+<!-- functions to draw and populate the table of results -->
+<!-- functions to calculate the tax etc -->
+<script src="js/lidconvenient2.js">
+</script>
+</html>
+
